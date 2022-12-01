@@ -5,9 +5,10 @@ import os
 PATH = './'
 PATTERN = '*.md'
 
-
+'''递归地'''
 def get_file_names(filepath, pattern):
     matches = []
+    # whethe the path exist
     if os.path.exists(filepath):
         for root, dirnames, filenames in os.walk(filepath):
             for filename in fnmatch.filter(filenames, pattern):

@@ -1,9 +1,9 @@
 import requests
 import re
-try:
-    from urllib.parse import urljoin
-except ImportError:
-    from urlparse import urljoin
+# try:
+from urllib.parse import urljoin
+# except ImportError:
+#     from urlparse import urljoin
 
 # regex
 link_re = re.compile(r'href="(.*?)"')
@@ -15,6 +15,7 @@ def crawl(url):
 
     # Check if successful
     if(req.status_code != 200):
+        print('unable to connect')
         return []
 
     # Find links
@@ -31,4 +32,4 @@ def crawl(url):
         print(link)
 
 if __name__ == '__main__':
-    crawl('http://www.realpython.com')
+    crawl('http://www.bilibili.com')
